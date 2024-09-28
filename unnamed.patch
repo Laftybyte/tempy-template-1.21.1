@@ -1,0 +1,16 @@
+Index: src/client/java/com/example/CustomScreen.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/client/java/com/example/CustomScreen.java b/src/client/java/com/example/CustomScreen.java
+--- a/src/client/java/com/example/CustomScreen.java	
++++ b/src/client/java/com/example/CustomScreen.java	(date 1726733614005)
+@@ -84,6 +84,7 @@
+         for (int i = 0; i < 10; i++) {
+             for (int o = 0; o < width / 10; o++) {
+                 contents.drawItem(MinecartItem.byRawId((i * 10) + o).getDefaultStack(), 10 * o, 10 * i);
++                contents.
+             }
+         }
+ 

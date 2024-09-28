@@ -1,0 +1,955 @@
+[
+    {
+        "race_name": "Human",
+        "background_description": "You are a human, you are not the best at anything, yet not \nthe worst. Normal, vanilla Minecraft gameplay.",
+        "physical_attributes": {
+            "height": {
+                "val": "2",
+                "text": "Height: 2 blocks"
+            },
+            "health": {
+                "val": "20",
+                "text": "Health: 20"
+            }
+        },
+        "racial_traits": [],
+        "total_modifiers": []
+    },
+    {
+        "race_name": "Wood Elf",
+        "background_description": "You are an agile and dexterous creature. Usually thin, \nmaking them more susceptible to oncoming damage.",
+        "physical_attributes": {
+            "height": {
+                "val": "2.5",
+                "text": "Height: 2.5 blocks"
+            },
+            "health": {
+                "val": "18",
+                "text": "Health: 18"
+            }
+        },
+        "racial_traits": [
+            {
+                "trait_name": "+20% bow damage",
+                "trait_description": "",
+                "trait_id": 0,
+                "modifiers": []
+            },
+            {
+                "trait_name": "+15% speed",
+                "trait_description": "",
+                "trait_id": 0,
+                "modifiers": []
+            },
+            {
+                "trait_name": "-%10 damage resistance",
+                "trait_description": "",
+                "trait_id": 0,
+                "modifiers": []
+            }
+        ],
+        "total_modifiers": []
+    },
+    {
+        "race_name": "Dwarf",
+        "background_description": "You are a hefty humanoid with a knack for the \nunderground. With your bigger stature, you are more \ntolerable to oncoming damage.",
+        "physical_attributes": {
+            "height": {
+                "val": "1.5",
+                "text": "Height: 1.5 blocks"
+            },
+            "health": {
+                "val": "24",
+                "text": "Health: 24"
+            }
+        },
+        "racial_traits": [
+            {
+                "trait_name": "+10% damage resistance",
+                "trait_description": "",
+                "trait_id": 0,
+                "modifiers": []
+            },
+            {
+                "trait_name": "20% knockback resistance",
+                "trait_description": "",
+                "trait_id": 0,
+                "modifiers": []
+            },
+            {
+                "trait_name": "+20% Axe damage",
+                "trait_description": "",
+                "trait_id": 0,
+                "modifiers": []
+            },
+            {
+                "trait_name": "20% mining efficiency",
+                "trait_description": "",
+                "trait_id": 0,
+                "modifiers": []
+            },
+            {
+                "trait_name": "-10% Movement Speed",
+                "trait_description": "",
+                "trait_id": 0,
+                "modifiers": []
+            }
+        ],
+        "total_modifiers": []
+    },
+    {
+        "race_name": "Gnome",
+        "background_description": "You are a gnome, a small, crafty humanoid. Due to your \nsize, you are much more susceptible to damage.",
+        "physical_attributes": {
+            "height": {
+                "val": "1",
+                "text": "Height: 1 block"
+            },
+            "health": {
+                "val": "14",
+                "text": "Health: 14"
+            }
+        },
+        "racial_traits": [
+            {
+                "trait_name": "+40% luck",
+                "trait_description": "",
+                "trait_id": 0,
+                "modifiers": []
+            },
+            {
+                "trait_name": "200% hoe damage",
+                "trait_description": "",
+                "trait_id": 0,
+                "modifiers": []
+            },
+            {
+                "trait_name": "+20% movement speed    -darkvision",
+                "trait_description": "",
+                "trait_id": 0,
+                "modifiers": []
+            },
+            {
+                "trait_name": "-25% damage resistance",
+                "trait_description": "",
+                "trait_id": 0,
+                "modifiers": []
+            }
+        ],
+        "total_modifiers": []
+    },
+    {
+        "race_name": "Half Elf",
+        "background_description": "You are a half elf, half human and half elf. You fit in about \nanywhere.",
+        "physical_attributes": {
+            "height": {
+                "val": "2",
+                "text": "Height: 2 blocks"
+            },
+            "health": {
+                "val": "20",
+                "text": "Health: 20"
+            }
+        },
+        "racial_traits": [
+            {
+                "trait_name": "+10% speed",
+                "trait_description": "",
+                "trait_id": 0,
+                "modifiers": []
+            },
+            {
+                "trait_name": "-%5 damage resistance",
+                "trait_description": "",
+                "trait_id": 0,
+                "modifiers": []
+            }
+        ],
+        "total_modifiers": []
+    },
+    {
+        "race_name": "Dark Elf",
+        "background_description": "As you are a Dark elf, you are sensitive to sunlight, \u2013 while \nin direct sunlight, you do and take 20%  more / less \ndamage though the opposite in darkness.",
+        "physical_attributes": {
+            "height": {
+                "val": "2",
+                "text": "Height: 2 blocks"
+            },
+            "health": {
+                "val": "18",
+                "text": "Health: 18"
+            }
+        },
+        "racial_traits": [
+            {
+                "trait_name": "+15% speed                                    Dark vision",
+                "trait_description": "",
+                "trait_id": 0,
+                "modifiers": []
+            },
+            {
+                "trait_name": "-%20 damage resistance in sun",
+                "trait_description": "",
+                "trait_id": 0,
+                "modifiers": []
+            },
+            {
+                "trait_name": "+%20 damage in dark",
+                "trait_description": "",
+                "trait_id": 0,
+                "modifiers": []
+            }
+        ],
+        "total_modifiers": []
+    },
+    {
+        "race_name": "Satyr",
+        "background_description": "You are half man, half goat. Said to be a gift from the god, \nAdeous.",
+        "physical_attributes": {
+            "height": {
+                "val": "2",
+                "text": "Height: 2 blocks"
+            },
+            "health": {
+                "val": "22",
+                "text": "Health: 22"
+            }
+        },
+        "racial_traits": [
+            {
+                "trait_name": "+10% speed",
+                "trait_description": "",
+                "trait_id": 0,
+                "modifiers": []
+            },
+            {
+                "trait_name": "Horns - When sprint attacking, you do 20% more damage",
+                "trait_description": "",
+                "trait_id": 0,
+                "modifiers": []
+            }
+        ],
+        "total_modifiers": []
+    },
+    {
+        "race_name": "Kobold",
+        "background_description": "Descended from fire oriented dragons, you are a kobold, a \nsmall scaled humanoid.",
+        "physical_attributes": {
+            "height": {
+                "val": "1",
+                "text": "Height: 1 blocks"
+            },
+            "health": {
+                "val": "16",
+                "text": "Health: 16"
+            }
+        },
+        "racial_traits": [
+            {
+                "trait_name": "Dark Vision",
+                "trait_description": "",
+                "trait_id": 0,
+                "modifiers": []
+            },
+            {
+                "trait_name": "+20% Fire Resistance",
+                "trait_description": "",
+                "trait_id": 0,
+                "modifiers": []
+            },
+            {
+                "trait_name": "Talons -",
+                "trait_description": "",
+                "trait_id": 0,
+                "modifiers": []
+            },
+            {
+                "trait_name": "20% unarmed damage",
+                "trait_description": "",
+                "trait_id": 0,
+                "modifiers": []
+            }
+        ],
+        "total_modifiers": []
+    },
+    {
+        "race_name": "Half Orc",
+        "background_description": "Half orc and half human - you are slightly resented, but \nnobody says a word.",
+        "physical_attributes": {
+            "height": {
+                "val": "2.5",
+                "text": "Height: 2.5 blocks"
+            },
+            "health": {
+                "val": "26",
+                "text": "Health: 26"
+            }
+        },
+        "racial_traits": [
+            {
+                "trait_name": "+20% physical damage       -Dark Vision",
+                "trait_description": "",
+                "trait_id": 0,
+                "modifiers": []
+            },
+            {
+                "trait_name": "-20% speed",
+                "trait_description": "",
+                "trait_id": 0,
+                "modifiers": []
+            },
+            {
+                "trait_name": "Cannot trade with villagers",
+                "trait_description": "",
+                "trait_id": 0,
+                "modifiers": []
+            }
+        ],
+        "total_modifiers": []
+    },
+    {
+        "race_name": "High Elf",
+        "background_description": "Elegant and pure, you view yourself as the highest race \npossible.",
+        "physical_attributes": {
+            "height": {
+                "val": "2.5",
+                "text": "Height: 2.5 blocks"
+            },
+            "health": {
+                "val": "18",
+                "text": "Health: 18"
+            }
+        },
+        "racial_traits": [
+            {
+                "trait_name": "+10% regeneration",
+                "trait_description": "",
+                "trait_id": 0,
+                "modifiers": []
+            },
+            {
+                "trait_name": "20% luck",
+                "trait_description": "",
+                "trait_id": 0,
+                "modifiers": []
+            },
+            {
+                "trait_name": "+10% saturation",
+                "trait_description": "",
+                "trait_id": 0,
+                "modifiers": []
+            },
+            {
+                "trait_name": "+20% speed",
+                "trait_description": "",
+                "trait_id": 0,
+                "modifiers": []
+            }
+        ],
+        "total_modifiers": []
+    },
+    {
+        "race_name": "Goliath",
+        "background_description": "You are feared, descended from giants, under every step is \na rumble.",
+        "physical_attributes": {
+            "height": {
+                "val": "3",
+                "text": "Height: 3 blocks"
+            },
+            "health": {
+                "val": "34",
+                "text": "Health: 34"
+            }
+        },
+        "racial_traits": [
+            {
+                "trait_name": "+\n+50% physical damage",
+                "trait_description": "",
+                "trait_id": 0,
+                "modifiers": []
+            },
+            {
+                "trait_name": "+\n-40% speed",
+                "trait_description": "",
+                "trait_id": 0,
+                "modifiers": []
+            }
+        ],
+        "total_modifiers": []
+    },
+    {
+        "race_name": "Goblin",
+        "background_description": "Gnomes.. Gnomes! YOU HATE GNOMES! \u2013 but love \nmischief\u2026",
+        "physical_attributes": {
+            "height": {
+                "val": "1",
+                "text": "Height: 1 blocks"
+            },
+            "health": {
+                "val": "14",
+                "text": "Health: 14"
+            }
+        },
+        "racial_traits": [
+            {
+                "trait_name": "+20% luck",
+                "trait_description": "",
+                "trait_id": 0,
+                "modifiers": []
+            },
+            {
+                "trait_name": "50% pickaxe damage",
+                "trait_description": "",
+                "trait_id": 0,
+                "modifiers": []
+            },
+            {
+                "trait_name": "+20% movement speed     -Dark Vision",
+                "trait_description": "",
+                "trait_id": 0,
+                "modifiers": []
+            },
+            {
+                "trait_name": "+25% blast resistance       -Produces 1 TNT a day",
+                "trait_description": "",
+                "trait_id": 0,
+                "modifiers": []
+            }
+        ],
+        "total_modifiers": []
+    },
+    {
+        "race_name": "Tiefling",
+        "background_description": "A common humanoid found in the nether. Once believed to \nhave been elves.",
+        "physical_attributes": {
+            "height": {
+                "val": "2",
+                "text": "Height: 2 blocks"
+            },
+            "health": {
+                "val": "20",
+                "text": "Health: 20"
+            }
+        },
+        "racial_traits": [
+            {
+                "trait_name": "+40% Fire Resistance",
+                "trait_description": "",
+                "trait_id": 0,
+                "modifiers": []
+            },
+            {
+                "trait_name": "-Spawns in the nether",
+                "trait_description": "",
+                "trait_id": 0,
+                "modifiers": []
+            },
+            {
+                "trait_name": "-Dark vision",
+                "trait_description": "",
+                "trait_id": 0,
+                "modifiers": []
+            }
+        ],
+        "total_modifiers": []
+    },
+    {
+        "race_name": "Dragonborn",
+        "background_description": "You are a descended from long extinct dragons, though \nmore robust and advanced than your kobold cousins.",
+        "physical_attributes": {
+            "height": {
+                "val": "2.5",
+                "text": "Height: 2.5 blocks"
+            },
+            "health": {
+                "val": "26",
+                "text": "Health: 26"
+            }
+        },
+        "racial_traits": [
+            {
+                "trait_name": "+10% physical damage       -Dark vision",
+                "trait_description": "",
+                "trait_id": 0,
+                "modifiers": []
+            },
+            {
+                "trait_name": "-10% damage resistance",
+                "trait_description": "",
+                "trait_id": 0,
+                "modifiers": []
+            },
+            {
+                "trait_name": "- Can shoot a bolt of chosen element once per day.",
+                "trait_description": "",
+                "trait_id": 0,
+                "modifiers": []
+            }
+        ],
+        "total_modifiers": []
+    },
+    {
+        "race_name": "Sheepfolk",
+        "background_description": "Said to be a distance nomadic group of people, enemies of \nPiglin, you strive for honor  and strength.",
+        "physical_attributes": {
+            "height": {
+                "val": "2.5",
+                "text": "Height: 2.5 blocks"
+            },
+            "health": {
+                "val": "24",
+                "text": "Health: 24"
+            }
+        },
+        "racial_traits": [
+            {
+                "trait_name": "-Cannot consume meat           -Drops 3 wool a day",
+                "trait_description": "",
+                "trait_id": 0,
+                "modifiers": []
+            },
+            {
+                "trait_name": "+30% damage reduction        -Can walk on Powdered Snow",
+                "trait_description": "",
+                "trait_id": 0,
+                "modifiers": []
+            },
+            {
+                "trait_name": "-Horns - When sprint attacking, you do 20% more damage",
+                "trait_description": "",
+                "trait_id": 0,
+                "modifiers": []
+            },
+            {
+                "trait_name": "+20% physical damage          -Dark vision",
+                "trait_description": "",
+                "trait_id": 0,
+                "modifiers": []
+            }
+        ],
+        "total_modifiers": []
+    },
+    {
+        "race_name": "Allic",
+        "background_description": "Higher, more advanced, intelligent Allay.",
+        "physical_attributes": {
+            "height": {
+                "val": "1.5",
+                "text": "Height: 1.5 blocks"
+            },
+            "health": {
+                "val": "10",
+                "text": "Health: 10"
+            }
+        },
+        "racial_traits": [
+            {
+                "trait_name": "-\nPermanent Elytra",
+                "trait_description": "",
+                "trait_id": 0,
+                "modifiers": []
+            },
+            {
+                "trait_name": "-\nNo hunger",
+                "trait_description": "",
+                "trait_id": 0,
+                "modifiers": []
+            },
+            {
+                "trait_name": "-\nDark vision",
+                "trait_description": "",
+                "trait_id": 0,
+                "modifiers": []
+            },
+            {
+                "trait_name": "-30% damage resistance",
+                "trait_description": "",
+                "trait_id": 0,
+                "modifiers": []
+            }
+        ],
+        "total_modifiers": []
+    },
+    {
+        "race_name": "Blazekin",
+        "background_description": "Descended from blazes, you have developed a tolerance \nfor other races.",
+        "physical_attributes": {
+            "height": {
+                "val": "2",
+                "text": "Height: 2 blocks"
+            },
+            "health": {
+                "val": "20",
+                "text": "Health: 20"
+            }
+        },
+        "racial_traits": [
+            {
+                "trait_name": "-\nNether mobs are neutral to you   -Spawns in the nether",
+                "trait_description": "",
+                "trait_id": 0,
+                "modifiers": []
+            },
+            {
+                "trait_name": "-\nIron golems attack you                 -Fire immunity",
+                "trait_description": "",
+                "trait_id": 0,
+                "modifiers": []
+            },
+            {
+                "trait_name": "-\nPermanent Elytra",
+                "trait_description": "",
+                "trait_id": 0,
+                "modifiers": []
+            },
+            {
+                "trait_name": "-\nTakes Damage in water / Rain",
+                "trait_description": "",
+                "trait_id": 0,
+                "modifiers": []
+            },
+            {
+                "trait_name": "-\nSpawns 1 blaze rod a day",
+                "trait_description": "",
+                "trait_id": 0,
+                "modifiers": []
+            }
+        ],
+        "total_modifiers": []
+    },
+    {
+        "race_name": "Arachnikin",
+        "background_description": "Half Spider, a \u2018gift\u2019 from the goddess, Marcinath.",
+        "physical_attributes": {
+            "height": {
+                "val": "2",
+                "text": "Height: 2 blocks"
+            },
+            "health": {
+                "val": "16",
+                "text": "Health: 16"
+            }
+        },
+        "racial_traits": [
+            {
+                "trait_name": "-\nOverworld mobs are neutral to you",
+                "trait_description": "",
+                "trait_id": 0,
+                "modifiers": []
+            },
+            {
+                "trait_name": "-\nIron golems attack you",
+                "trait_description": "",
+                "trait_id": 0,
+                "modifiers": []
+            },
+            {
+                "trait_name": "-\nCan climb walls",
+                "trait_description": "",
+                "trait_id": 0,
+                "modifiers": []
+            },
+            {
+                "trait_name": "-\nCan move through Cobwebs easily",
+                "trait_description": "",
+                "trait_id": 0,
+                "modifiers": []
+            },
+            {
+                "trait_name": "-\nSpawns 9 string a day",
+                "trait_description": "",
+                "trait_id": 0,
+                "modifiers": []
+            }
+        ],
+        "total_modifiers": []
+    },
+    {
+        "race_name": "Endling",
+        "background_description": "A half breed colony between endermen and void elves \nthat were banished long ago.",
+        "physical_attributes": {
+            "height": {
+                "val": "3",
+                "text": "Height: 3 blocks"
+            },
+            "health": {
+                "val": "26",
+                "text": "Health: 26"
+            }
+        },
+        "racial_traits": [
+            {
+                "trait_name": "-\nOverworld and End mobs are neutral to you",
+                "trait_description": "",
+                "trait_id": 0,
+                "modifiers": []
+            },
+            {
+                "trait_name": "-\nIron golems attack you",
+                "trait_description": "",
+                "trait_id": 0,
+                "modifiers": []
+            },
+            {
+                "trait_name": "-\nTakes Damage in water / Rain",
+                "trait_description": "",
+                "trait_id": 0,
+                "modifiers": []
+            },
+            {
+                "trait_name": "-\nCan teleport 25 blocks whenever",
+                "trait_description": "",
+                "trait_id": 0,
+                "modifiers": []
+            }
+        ],
+        "total_modifiers": []
+    },
+    {
+        "race_name": "Piglin",
+        "background_description": "Mutated pig beasts from the nether, the sworn enemy of \nSheepfolk.",
+        "physical_attributes": {
+            "height": {
+                "val": "2",
+                "text": "Height: 2 blocks"
+            },
+            "health": {
+                "val": "24",
+                "text": "Health: 24"
+            }
+        },
+        "racial_traits": [
+            {
+                "trait_name": "-\nNether mobs are neutral to you",
+                "trait_description": "",
+                "trait_id": 0,
+                "modifiers": []
+            },
+            {
+                "trait_name": "20% Fire Resistance",
+                "trait_description": "",
+                "trait_id": 0,
+                "modifiers": []
+            },
+            {
+                "trait_name": "-\nIron golems attack you",
+                "trait_description": "",
+                "trait_id": 0,
+                "modifiers": []
+            },
+            {
+                "trait_name": "-\nGold armor and tools have diamond-like durability",
+                "trait_description": "",
+                "trait_id": 0,
+                "modifiers": []
+            },
+            {
+                "trait_name": "-\n+20% axe damage",
+                "trait_description": "",
+                "trait_id": 0,
+                "modifiers": []
+            },
+            {
+                "trait_name": "-\nSpawns in the nether",
+                "trait_description": "",
+                "trait_id": 0,
+                "modifiers": []
+            }
+        ],
+        "total_modifiers": []
+    },
+    {
+        "race_name": "Withered",
+        "background_description": "A child of the once great Wither, you roam searching \nwithout a master.",
+        "physical_attributes": {
+            "height": {
+                "val": "2.5",
+                "text": "Height: 2.5 blocks"
+            },
+            "health": {
+                "val": "24",
+                "text": "Health: 24"
+            }
+        },
+        "racial_traits": [
+            {
+                "trait_name": "-\nSpawns in the nether",
+                "trait_description": "",
+                "trait_id": 0,
+                "modifiers": []
+            },
+            {
+                "trait_name": "20% Fire Resistance",
+                "trait_description": "",
+                "trait_id": 0,
+                "modifiers": []
+            },
+            {
+                "trait_name": "-\n+20% sword damage",
+                "trait_description": "",
+                "trait_id": 0,
+                "modifiers": []
+            },
+            {
+                "trait_name": "-\nInflicts withering damage",
+                "trait_description": "",
+                "trait_id": 0,
+                "modifiers": []
+            },
+            {
+                "trait_name": "-\nIron Golems Attack you",
+                "trait_description": "",
+                "trait_id": 0,
+                "modifiers": []
+            },
+            {
+                "trait_name": "-\nNether mobs are neutral to you",
+                "trait_description": "",
+                "trait_id": 0,
+                "modifiers": []
+            }
+        ],
+        "total_modifiers": []
+    },
+    {
+        "race_name": "Illager",
+        "background_description": "Human? No\u2026 You\u2019re beyond that, determined to purify this \nworld of the impure.",
+        "physical_attributes": {
+            "height": {
+                "val": "2",
+                "text": "Height: 2 blocks"
+            },
+            "health": {
+                "val": "20",
+                "text": "Health: 20"
+            }
+        },
+        "racial_traits": [
+            {
+                "trait_name": "-\nOverworld mobs are neutral to you",
+                "trait_description": "",
+                "trait_id": 0,
+                "modifiers": []
+            },
+            {
+                "trait_name": "-\nOnce a day, you can enthrall 1 overworld mob",
+                "trait_description": "",
+                "trait_id": 0,
+                "modifiers": []
+            },
+            {
+                "trait_name": "-\n+10% axe damage",
+                "trait_description": "",
+                "trait_id": 0,
+                "modifiers": []
+            },
+            {
+                "trait_name": "-\n-20% blast resistance",
+                "trait_description": "",
+                "trait_id": 0,
+                "modifiers": []
+            }
+        ],
+        "total_modifiers": []
+    },
+    {
+        "race_name": "Ghastling",
+        "background_description": "Said to be the children of a ghast tear\u2026",
+        "physical_attributes": {
+            "height": {
+                "val": "2",
+                "text": "Height: 2 blocks"
+            },
+            "health": {
+                "val": "20",
+                "text": "Health: 20"
+            }
+        },
+        "racial_traits": [
+            {
+                "trait_name": "-\nSpawns in the nether",
+                "trait_description": "",
+                "trait_id": 0,
+                "modifiers": []
+            },
+            {
+                "trait_name": "-\nNether mobs are neutral to you",
+                "trait_description": "",
+                "trait_id": 0,
+                "modifiers": []
+            },
+            {
+                "trait_name": "-\nPermanent Elytra",
+                "trait_description": "",
+                "trait_id": 0,
+                "modifiers": []
+            },
+            {
+                "trait_name": "-\nSpawns 1 ghast tear a day",
+                "trait_description": "",
+                "trait_id": 0,
+                "modifiers": []
+            },
+            {
+                "trait_name": "-\nFire immunity",
+                "trait_description": "",
+                "trait_id": 0,
+                "modifiers": []
+            },
+            {
+                "trait_name": "-\n-100% blast resistance",
+                "trait_description": "",
+                "trait_id": 0,
+                "modifiers": []
+            }
+        ],
+        "total_modifiers": []
+    },
+    {
+        "race_name": "Merkin",
+        "background_description": "Elves that have evolved to endure the ocean and the \nchallenges it brings.",
+        "physical_attributes": {
+            "height": {
+                "val": "2",
+                "text": "Height: 2 blocks"
+            },
+            "health": {
+                "val": "20",
+                "text": "Health: 20"
+            }
+        },
+        "racial_traits": [
+            {
+                "trait_name": "-\nPermanent Dolphins Grace      -Can eat raw kelp",
+                "trait_description": "",
+                "trait_id": 0,
+                "modifiers": []
+            },
+            {
+                "trait_name": "-\nWater Breathing                       - Cant breath air",
+                "trait_description": "",
+                "trait_id": 0,
+                "modifiers": []
+            },
+            {
+                "trait_name": "-\nDark Vision",
+                "trait_description": "",
+                "trait_id": 0,
+                "modifiers": []
+            },
+            {
+                "trait_name": "-\nCan mine underwater normally",
+                "trait_description": "",
+                "trait_id": 0,
+                "modifiers": []
+            },
+            {
+                "trait_name": "-\n-100% fire resistance",
+                "trait_description": "",
+                "trait_id": 0,
+                "modifiers": []
+            }
+        ],
+        "total_modifiers": []
+    }
+]

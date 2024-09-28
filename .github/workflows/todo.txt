@@ -1,0 +1,34 @@
+[x] pagination for main screen,
+[x ] read from .json file
+
+
+[ ] load names from .json file ._-> main screen buttons
+
+
+
+
+#Pagination notes
+# Race selection ._-> depth of 1
+# Lore selection ._-> depth of 3
+
+
+# Start off with blank page + go back button.
+# Prob best to generate the pages for each race,
+# Then "draw" the pages individually ??
+# Can also just have a skeleton page that imports data from .json <<This seems easier to get off ground but may have
+# issues>>
+Create hop pages for when user clicks on race button
+    - back button
+    - confirm button
+    - attributes section (+50% attack dam etc)
+    - About section (You are a gnome text here rawrr)
+    - base attributes section ( height, health )
+    - race name
+
+
+
+
+
+
+
+
