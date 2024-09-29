@@ -110,12 +110,13 @@ public class CustomScreen extends Screen {
 
 
 
-        // Add the Lore button at the top-right of the screen
+// Add the Lore button at the top-right of the screen
         int loreButtonX = width - MARGIN_RIGHT - LORE_BUTTON_WIDTH;
         int loreButtonY = TITLE_MARGIN;
         this.addDrawableChild(ButtonWidget.builder(Text.of("Lore"), btn -> {
             if (this.client != null) {
-                // Lore button logic here
+                // Navigate to LoreScreen on button click
+                this.client.setScreen(new LoreScreen(Text.of("Lore Selection"))); // Pass the title for the Lore screen
             }
         }).dimensions(loreButtonX, loreButtonY, LORE_BUTTON_WIDTH, LORE_BUTTON_HEIGHT).build());
 
