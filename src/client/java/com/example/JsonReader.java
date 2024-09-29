@@ -38,7 +38,7 @@ public class JsonReader {
         return new ArrayList<>();
     }
 
-    // Define RaceData class to map JSON structure
+    // Define RaceData class to map JSON structure rawrr
     public static class RaceData {
         private String race_name;
         private String background_description;

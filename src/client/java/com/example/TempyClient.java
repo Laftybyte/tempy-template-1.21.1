@@ -1,5 +1,4 @@
 package com.example;
-
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
@@ -11,7 +10,8 @@ import net.fabricmc.fabric.api.client.networking.v1.ClientPlayConnectionEvents;
 
 // ... other imports
 
-
+//agwa test
+// HRRRM
 public class TempyClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
@@ -50,6 +50,6 @@ public class TempyClient implements ClientModInitializer {
 
     }
 }
-
+cakee?
 
  */
