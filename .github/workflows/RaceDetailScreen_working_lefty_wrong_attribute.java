@@ -84,8 +84,7 @@ public class RaceDetailScreen extends Screen {
         // Draw left area
         int leftWidth = width * 7 / 10;
         int leftHeight = height - 80;
-        // Set left area background color
-        contents.fill(0, 30, leftWidth, 30 + leftHeight, 0xFFCCCCCC); // Left area background
+        contents.fill(0, 30, leftWidth, 30 + leftHeight, 0xFFCCCCCC);
 
         // Draw the background description
         String leftyText = currentRaceData != null ? currentRaceData.getBackgroundDescription() : "No description available.";
@@ -103,31 +102,10 @@ public class RaceDetailScreen extends Screen {
             leftyTextY += textRenderer.fontHeight; // Move down for the next line
         }
 
-        // Calculate the Y position for attributes starting from the middle of the lefty text box
-        int attributesYPosition = 30 + leftHeight / 2; // Start at 50% height of lefty box
+        // Calculate the Y position for attributes at the bottom left of the lefty text box
+        int attributesYPosition = 30 + leftHeight - 40; // Space from the bottom of the box (40 is for padding)
 
-        // Background for the racial traits
-        int traitsBackgroundHeight = 50; // Height of the traits background box
-        contents.fill(leftyTextX - 2, attributesYPosition - 10, leftWidth - 10, attributesYPosition + traitsBackgroundHeight, 0x88000000);
-
-        // Draw racial traits in the bottom left of the lefty text box
-        if (currentRaceData != null) {
-            // Get the trait names and render them
-            List<String> traitNames = currentRaceData.getTraitNames(); // Fetch trait names
-            int attributesX = leftyTextX + 10; // Padding from the left
-
-            // Render each trait name
-            for (String traitName : traitNames) {
-                contents.drawTextWithShadow(textRenderer, Text.literal(traitName), attributesX, attributesYPosition, 0xFFFFFFFF);
-                attributesYPosition += textRenderer.fontHeight; // Move down for the next trait
-                // Check if the Y position exceeds the bottom of the lefty box
-                if (attributesYPosition > (30 + leftHeight - 10)) { // 10 for padding
-                    break; // Stop rendering if it exceeds the box
-                }
-            }
-        }
-
-        // Display physical attributes in the right area
+        // Display physical attributes
         if (currentRaceData != null) {
             String heightText = currentRaceData.getPhysicalAttributes().getHeight().getText();
             String healthText = currentRaceData.getPhysicalAttributes().getHealth().getText();
@@ -138,16 +116,31 @@ public class RaceDetailScreen extends Screen {
             int rightTextY = 40;
 
             // Background for the right area
-            contents.fill(leftWidth, 30, width, 30 + leftHeight, 0xFFAAAAAA); // Right area background (different color)
-
-            // Background for the right box
             int rightBoxHeight = (rightLines.length * textRenderer.fontHeight) + 10; // 10 for padding
-            contents.fill(rightTextX - 2, rightTextY - 2, width - 10, rightTextY + rightBoxHeight + 2, 0x88000000); // Background for right box
+            contents.fill(rightTextX - 2, rightTextY - 2, width - 10, rightTextY + rightBoxHeight + 2, 0x88000000);
 
             // Render each line separately
             for (String line : rightLines) {
                 contents.drawTextWithShadow(textRenderer, Text.literal(line), rightTextX, rightTextY, 0xFFFFFFFF);
                 rightTextY += textRenderer.fontHeight; // Move down for the next line
+            }
+
+            // Draw racial traits below the physical attributes
+            int traitsTextX = leftWidth + 10;
+            int traitsTextY = rightTextY + 20; // Space below physical attributes
+
+            // Get the trait names and render them
+            List<String> traitNames = currentRaceData.getTraitNames(); // Fetch trait names
+            for (String traitName : traitNames) {
+                contents.drawTextWithShadow(textRenderer, Text.literal(traitName), traitsTextX, traitsTextY, 0xFFFFFFFF);
+                traitsTextY += textRenderer.fontHeight; // Move down for the next trait
+            }
+
+            // Draw attributes in the bottom left of the lefty text box
+            int attributesX = leftyTextX + 10; // Padding from the left
+            for (String line : rightLines) {
+                contents.drawTextWithShadow(textRenderer, Text.literal(line), attributesX, attributesYPosition, 0xFFFFFFFF);
+                attributesYPosition += textRenderer.fontHeight; // Move down for the next line
             }
         }
     }
@@ -172,7 +165,6 @@ public class RaceDetailScreen extends Screen {
 
         return lines;
     }
-
 
 
 }
