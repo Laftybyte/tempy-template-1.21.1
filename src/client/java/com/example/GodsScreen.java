@@ -88,7 +88,7 @@ public class GodsScreen extends Screen {
         int returnButtonY = buttonY - (RETURN_BUTTON_HEIGHT + 15); // Position higher above the last button
         this.addDrawableChild(ButtonWidget.builder(Text.of("Return"), btn -> {
             if (this.client != null) {
-                this.client.setScreen(new LoreScreen(Text.of("Previous Screen"))); // Goes back to lore screen
+                this.client.setScreen(new LoreScreen(Text.of("Previous Screen"))); // Goes back to lore screen ribbit
             }
         }).dimensions(returnButtonX, returnButtonY, RETURN_BUTTON_WIDTH, RETURN_BUTTON_HEIGHT).build());
     }
