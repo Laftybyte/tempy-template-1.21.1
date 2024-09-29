@@ -82,7 +82,7 @@ public class NextScreen extends Screen {
 
         int buttonSpacingX = (gridWidth - BUTTON_WIDTH * GRID_COLUMNS) / (GRID_COLUMNS + 1);
         int buttonSpacingY = (gridHeight - BUTTON_HEIGHT * GRID_ROWS) / (GRID_ROWS + 1);
-
+        List<JsonReader.RaceData> raceDataList = JsonReader.readJson("races.json");
         // Create buttons for the grid
         for (int row = 0; row < GRID_ROWS; row++) {
             for (int col = 0; col < GRID_COLUMNS; col++) {
@@ -90,12 +90,15 @@ public class NextScreen extends Screen {
                 if (index < buttonNames.size()) { // Ensure we don't exceed the list size
                     int x = MARGIN_LEFT + buttonSpacingX + col * (BUTTON_WIDTH + buttonSpacingX);
                     int y = MARGIN_TOP + buttonSpacingY + row * (BUTTON_HEIGHT + buttonSpacingY);
+
+                    JsonReader.RaceData raceData = raceDataList.get(index); // Get the RaceData object
                     String buttonText = buttonNames.get(index);
 
                     ButtonWidget button = ButtonWidget.builder(Text.of(buttonText), btn -> {
                         // Button click logic
                         if (this.client != null) {
-                            this.client.player.sendMessage(Text.of(buttonText + " clicked!"), false);
+                            this.client.setScreen(new RaceDetailScreen(Text.of(buttonText), this, raceData, buttonText));
+                            //this.client.player.sendMessage(Text.of(buttonText + " clicked!"), false);
                         }
                     }).dimensions(x, y, BUTTON_WIDTH, BUTTON_HEIGHT).build();
 

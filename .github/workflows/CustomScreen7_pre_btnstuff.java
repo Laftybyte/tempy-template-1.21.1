@@ -61,7 +61,7 @@ public class CustomScreen extends Screen {
         Random random = new Random();
         randomColor = colors[random.nextInt(colors.length)]; // Set the random color
 
-        List<String> buttonNames = new ArrayList<>(List.of(
+        List<String> raceButtonsData = new ArrayList<>(List.of(
                 "Human",
                 "Wood Elf",
                 "Dwarf",
@@ -76,38 +76,40 @@ public class CustomScreen extends Screen {
                 "Goblin"
         ));
 
-
         // Calculate the grid dimensions
         int gridWidth = width - 2 * MARGIN_LEFT;
         int gridHeight = height - MARGIN_TOP - MARGIN_BOTTOM;
 
         int buttonSpacingX = (gridWidth - BUTTON_WIDTH * GRID_COLUMNS) / (GRID_COLUMNS + 1);
         int buttonSpacingY = (gridHeight - BUTTON_HEIGHT * GRID_ROWS) / (GRID_ROWS + 1);
+
         List<JsonReader.RaceData> raceDataList = JsonReader.readJson("races.json");
+
         // Create buttons for the grid
-        for (int row = 0; row < GRID_ROWS; row++) {
-            for (int col = 0; col < GRID_COLUMNS; col++) {
-                int index = row * GRID_COLUMNS + col;
-                if (index < buttonNames.size()) { // Ensure we don't exceed the list size
-                    int x = MARGIN_LEFT + buttonSpacingX + col * (BUTTON_WIDTH + buttonSpacingX);
-                    int y = MARGIN_TOP + buttonSpacingY + row * (BUTTON_HEIGHT + buttonSpacingY);
+        if (raceDataList != null && !raceDataList.isEmpty()) {
+            for (int row = 0; row < GRID_ROWS; row++) {
+                for (int col = 0; col < GRID_COLUMNS; col++) {
+                    int index = row * GRID_COLUMNS + col;
+                    if (index < raceDataList.size()) {
+                        int x = MARGIN_LEFT + buttonSpacingX + col * (BUTTON_WIDTH + buttonSpacingX);
+                        int y = MARGIN_TOP + buttonSpacingY + row * (BUTTON_HEIGHT + buttonSpacingY);
+                        JsonReader.RaceData raceData = raceDataList.get(index); // Get the RaceData object
+                        String buttonText = raceData.getRaceName(); // Use the race name for the button text
 
-                    JsonReader.RaceData raceData = raceDataList.get(index); // Get the RaceData object
-                    String buttonText = buttonNames.get(index);
+                        // Create button that passes the RaceData object
+                        ButtonWidget button = ButtonWidget.builder(Text.of(buttonText), btn -> {
+                            if (this.client != null) {
+                                this.client.setScreen(new RaceDetailScreen(Text.of(buttonText), this, raceData, buttonText));
+                            }
+                        }).dimensions(x, y, BUTTON_WIDTH, BUTTON_HEIGHT).build();
 
-                    ButtonWidget button = ButtonWidget.builder(Text.of(buttonText), btn -> {
-                        // Button click logic
-                        if (this.client != null) {
-                            this.client.setScreen(new RaceDetailScreen(Text.of(buttonText), this, raceData, buttonText));
-                            //this.client.player.sendMessage(Text.of(buttonText + " clicked!"), false);
-                        }
-                    }).dimensions(x, y, BUTTON_WIDTH, BUTTON_HEIGHT).build();
-
-                    this.addDrawableChild(button);
+                        this.addDrawableChild(button);
+                    }
                 }
             }
+        } else {
+            System.out.println("No race names found in raceSelectButtons.json");
         }
-
 
 
         // Add the Lore button at the top-right of the screen

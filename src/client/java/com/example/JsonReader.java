@@ -27,6 +27,7 @@ public class JsonReader {
                 Resource resource = optionalResource.get();
                 try (InputStreamReader reader = new InputStreamReader(resource.getInputStream())) {
                     RaceData[] raceDataArray = gson.fromJson(reader, RaceData[].class);
+                    System.out.println("<<<<<Json Loaded!");
                     return List.of(raceDataArray);
                 }
             } else {
