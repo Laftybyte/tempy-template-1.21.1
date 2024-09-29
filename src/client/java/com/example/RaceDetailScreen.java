@@ -7,6 +7,7 @@ import net.minecraft.client.gui.widget.ButtonWidget;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class RaceDetailScreen extends Screen {
@@ -81,7 +82,6 @@ public class RaceDetailScreen extends Screen {
         contents.drawTextWithShadow(textRenderer, styledText, textX, textY, 0xFF000000);
 
         // Draw left area
-        System.out.println("Width: " + width);
         int leftWidth = width * 7 / 10;
         int leftHeight = height - 80;
         contents.fill(0, 30, leftWidth, 30 + leftHeight, 0xFFCCCCCC);
@@ -91,12 +91,13 @@ public class RaceDetailScreen extends Screen {
         int leftyTextX = 10;
         int leftyTextY = 40;
 
-        // Background for the description area
-        contents.fill(leftyTextX - 2, leftyTextY - 2, leftWidth - 10, leftyTextY +
-                (textRenderer.fontHeight * leftyText.split("\n").length) + 2, 0x88000000);
+        // Split text into lines that fit within the left area
+        List<String> wrappedLines = wrapText(leftyText, leftWidth - 20); // 20 is for padding
+        int descriptionBoxHeight = wrappedLines.size() * textRenderer.fontHeight + 10; // 10 for padding
+        contents.fill(leftyTextX - 2, leftyTextY - 2, leftWidth - 10, leftyTextY + descriptionBoxHeight + 2, 0x88000000);
 
         // Render each line of the description
-        for (String line : leftyText.split("\n")) {
+        for (String line : wrappedLines) {
             contents.drawTextWithShadow(textRenderer, Text.literal(line), leftyTextX, leftyTextY, 0xFFFFFFFF);
             leftyTextY += textRenderer.fontHeight; // Move down for the next line
         }
@@ -116,7 +117,8 @@ public class RaceDetailScreen extends Screen {
             int rightTextY = 40;
 
             // Background for the right area
-            contents.fill(rightTextX - 2, rightTextY - 2, width - 10, rightTextY + (textRenderer.fontHeight * rightLines.length) + 2, 0x88000000);
+            int rightBoxHeight = (rightLines.length * textRenderer.fontHeight) + 10; // 10 for padding
+            contents.fill(rightTextX - 2, rightTextY - 2, width - 10, rightTextY + rightBoxHeight + 2, 0x88000000);
 
             // Render each line separately
             for (String line : rightLines) {
@@ -136,4 +138,26 @@ public class RaceDetailScreen extends Screen {
             }
         }
     }
+
+    // Method to wrap text to fit within a specified width
+    private List<String> wrapText(String text, int maxWidth) {
+        List<String> lines = new ArrayList<>();
+        String[] words = text.split(" ");
+        StringBuilder currentLine = new StringBuilder();
+
+        for (String word : words) {
+            if (textRenderer.getWidth(currentLine + word) <= maxWidth) {
+                currentLine.append(word).append(" ");
+            } else {
+                lines.add(currentLine.toString().trim());
+                currentLine = new StringBuilder(word + " ");
+            }
+        }
+        if (currentLine.length() > 0) {
+            lines.add(currentLine.toString().trim());
+        }
+
+        return lines;
+    }
+
 }
