@@ -54,7 +54,9 @@ public class LoreScreen extends Screen {
                     // Button click logic for Lore
                     if (this.client != null) {
                         if ("Races".equals(buttonText)) {
-                            this.client.setScreen(new RaceDetailScreen(Text.of("Races Lore"), this, null, buttonText));
+
+
+                            this.client.setScreen(new RaceLorePage1(Text.of("Race Lore Page 1"))); // Set the screen to RaceLorePage1
                         } else if ("Gods".equals(buttonText)) {
                             this.client.setScreen(new GodsScreen(Text.of("Gods Lore")));
                         }
