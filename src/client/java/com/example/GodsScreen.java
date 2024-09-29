@@ -30,17 +30,17 @@ public class GodsScreen extends Screen {
         super(title);
         // Initialize button names for both rows
         topButtonNames = new ArrayList<>(List.of(
-                "God 1",
-                "God 2",
-                "God 3",
-                "God 4"
+                "Sarcinath",
+                "Asmod",
+                "Adeous",
+                "Marcinath"
         ));
 
         bottomButtonNames = new ArrayList<>(List.of(
-                "God 5",
-                "God 6",
-                "God 7",
-                "God 8"
+                "The Wither",
+                "End Mother",
+                "Haytholore",
+                "Poseidus"
         ));
     }
 
@@ -50,17 +50,19 @@ public class GodsScreen extends Screen {
         int buttonSpacingX = (width - 2 * MARGIN_LEFT - BUTTON_WIDTH * GRID_COLUMNS) / (GRID_COLUMNS + 1);
         int topButtonY = MARGIN_TOP + TITLE_MARGIN_TOP + BUTTON_HEIGHT; // Adjust y position for the top row
         int bottomButtonY = topButtonY + BUTTON_HEIGHT + MARGIN_BOTTOM + BUTTON_HEIGHT + MARGIN_BOTTOM; // Position for the bottom row
-        int buttonY = MARGIN_TOP + TITLE_MARGIN_TOP + BUTTON_HEIGHT; // Adjust y position below the title
+
         // Create buttons for the top row
         for (int col = 0; col < GRID_COLUMNS; col++) {
             int index = col;
             if (index < topButtonNames.size()) { // Ensure we don't exceed the list size
                 int x = MARGIN_LEFT + buttonSpacingX + col * (BUTTON_WIDTH + buttonSpacingX);
-
                 String buttonText = topButtonNames.get(index);
 
                 ButtonWidget button = ButtonWidget.builder(Text.of(buttonText), btn -> {
-                    // Button click logic for top row gods
+                    // Open GodSelectionScreen with the selected god's name
+                    if (this.client != null) {
+                        this.client.setScreen(new GodSelectionScreen(Text.of("God Selection"), buttonText));
+                    }
                 }).dimensions(x, topButtonY, BUTTON_WIDTH, BUTTON_HEIGHT).build();
 
                 this.addDrawableChild(button);
@@ -72,11 +74,13 @@ public class GodsScreen extends Screen {
             int index = col;
             if (index < bottomButtonNames.size()) { // Ensure we don't exceed the list size
                 int x = MARGIN_LEFT + buttonSpacingX + col * (BUTTON_WIDTH + buttonSpacingX);
-
                 String buttonText = bottomButtonNames.get(index);
 
                 ButtonWidget button = ButtonWidget.builder(Text.of(buttonText), btn -> {
-                    // Button click logic for bottom row gods
+                    // Open GodSelectionScreen with the selected god's name
+                    if (this.client != null) {
+                        this.client.setScreen(new GodSelectionScreen(Text.of("God Selection"), buttonText));
+                    }
                 }).dimensions(x, bottomButtonY, BUTTON_WIDTH, BUTTON_HEIGHT).build();
 
                 this.addDrawableChild(button);
@@ -85,10 +89,10 @@ public class GodsScreen extends Screen {
 
         // Add the "Return" button above the last button in the button row
         int returnButtonX = MARGIN_LEFT + buttonSpacingX + (GRID_COLUMNS - 1) * (BUTTON_WIDTH + buttonSpacingX) + BUTTON_WIDTH - RETURN_BUTTON_WIDTH; // Align with the last button
-        int returnButtonY = buttonY - (RETURN_BUTTON_HEIGHT + 15); // Position higher above the last button
+        int returnButtonY = topButtonY - (RETURN_BUTTON_HEIGHT + 15); // Position higher above the last button
         this.addDrawableChild(ButtonWidget.builder(Text.of("Return"), btn -> {
             if (this.client != null) {
-                this.client.setScreen(new LoreScreen(Text.of("Previous Screen"))); // Goes back to lore screen ribbit
+                this.client.setScreen(new LoreScreen(Text.of("Previous Screen"))); // Goes back to lore screen
             }
         }).dimensions(returnButtonX, returnButtonY, RETURN_BUTTON_WIDTH, RETURN_BUTTON_HEIGHT).build());
     }
