@@ -15,7 +15,7 @@ public class RaceDetailScreen extends Screen {
     private final List<JsonReader.RaceData> raceDataList;
     private JsonReader.RaceData currentRaceData;
 
-    public RaceDetailScreen(Text title, Screen previousScreen, JsonReader.RaceData raceData) {
+    public RaceDetailScreen(Text title, Screen previousScreen, JsonReader.RaceData raceData,String buttonText) {
         super(title);
         this.previousScreen = previousScreen;
         this.currentRaceData = raceData; // Set currentRaceData to the passed race data
@@ -23,9 +23,32 @@ public class RaceDetailScreen extends Screen {
         // Read JSON data
         this.raceDataList = JsonReader.readJson("races.json");
 
+
+
+        // Print the button text
+        System.out.println("Button text: " + buttonText);
+        System.out.println(raceData); // [00:08:28] [Render thread/INFO] (Minecraft) [STDOUT]: com.example.JsonReader$RaceData@2e91f25b
         System.out.println("Loaded races: " + raceDataList.size());
 
-        this.currentRaceData = raceDataList.isEmpty() ? null : raceDataList.get(1); // Default to the first race
+
+
+
+
+
+        // Iterate through the raceDataList to find the race matching the buttonText
+        for (JsonReader.RaceData race : raceDataList) {
+            if (race.getRaceName().equals(buttonText)) {
+                this.currentRaceData = race; // Set currentRaceData to the matching race
+                break;
+            }
+        }
+
+
+        this.currentRaceData = (this.currentRaceData == null && !raceDataList.isEmpty()) ? raceDataList.getFirst() : this.currentRaceData;
+
+
+
+        //this.currentRaceData = raceDataList.isEmpty() ? null : raceDataList.get(1); // Default to the first race
     }
 
     @Override

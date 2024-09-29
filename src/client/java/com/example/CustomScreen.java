@@ -99,7 +99,7 @@ public class CustomScreen extends Screen {
                         // Create button that passes the RaceData object
                         ButtonWidget button = ButtonWidget.builder(Text.of(buttonText), btn -> {
                             if (this.client != null) {
-                                this.client.setScreen(new RaceDetailScreen(Text.of(buttonText), this, raceData));
+                                this.client.setScreen(new RaceDetailScreen(Text.of(buttonText), this, raceData, buttonText));
                             }
                         }).dimensions(x, y, BUTTON_WIDTH, BUTTON_HEIGHT).build();
 
