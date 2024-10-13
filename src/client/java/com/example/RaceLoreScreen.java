@@ -30,7 +30,7 @@ public class RaceLoreScreen extends Screen {
         // Add the "Return" button in the calculated position
         this.addDrawableChild(ButtonWidget.builder(Text.of("Return"), btn -> {
             if (this.client != null) {
-                this.client.setScreen(new LoreScreen(Text.of("Gods"))); // Return to the Gods screen
+                this.client.setScreen(new LoreScreen(Text.of("Race"))); // Return to the Gods screen
             }
         }).dimensions(returnButtonX, returnButtonY, RETURN_BUTTON_WIDTH, RETURN_BUTTON_HEIGHT).build());
     }
