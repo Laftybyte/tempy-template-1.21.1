@@ -74,7 +74,8 @@ public class RaceLorePage2 extends Screen {
 
                     ButtonWidget button = ButtonWidget.builder(Text.of(buttonText), btn -> {
                         if (this.client != null) {
-                            this.client.setScreen(new RaceDetailScreen(Text.of(buttonText), this, null, buttonText));
+                            this.client.setScreen(new RaceLoreScreen(Text.of(buttonText), buttonText));
+                            //this.client.setScreen(new RaceDetailScreen(Text.of(buttonText), this, null, buttonText));
                         }
                     }).dimensions(x, y, BUTTON_WIDTH, BUTTON_HEIGHT).build();
 
