@@ -117,19 +117,19 @@ public class RaceDetailScreen extends Screen {
                     System.out.println("New mining speed: " + newMiningSpeed);
                 }
 
+                // << Modify Player attack damage >>
+                if (player != null) {
+                    // You can modify the player's attack damage attribute here
+                    // Example: Increase attack damage by a multiplier (e.g., 1.5x)
+                    double currentAttackDamage = player.getAttributeValue(EntityAttributes.GENERIC_ATTACK_DAMAGE); // Get current attack damage
+                    double newAttackDamage = currentAttackDamage * 1.5; // Increase by 50% (for example)
+                    System.out.println("Cur attack damage: " + currentAttackDamage);
+                    // Now apply the new attack damage value
+                    player.getAttributeInstance(EntityAttributes.GENERIC_ATTACK_DAMAGE).setBaseValue(newAttackDamage);
 
-
-                // You can modify the player's attack damage attribute here
-                // Example: Increase attack damage by a multiplier (e.g., 1.5x)
-                double currentAttackDamage = player.getAttributeValue(EntityAttributes.GENERIC_ATTACK_DAMAGE); // Get current attack damage
-                double newAttackDamage = currentAttackDamage * 1.5; // Increase by 50% (for example)
-                System.out.println("Cur attack damage: " + currentAttackDamage);
-                // Now apply the new attack damage value
-                player.getAttributeInstance(EntityAttributes.GENERIC_ATTACK_DAMAGE).setBaseValue(newAttackDamage);
-
-                // Optional: You can also print out the updated value to the console for debugging
-                System.out.println("New attack damage: " + newAttackDamage);
-
+                    // Optional: You can also print out the updated value to the console for debugging
+                    System.out.println("New attack damage: " + newAttackDamage);
+                }
 
 
 
