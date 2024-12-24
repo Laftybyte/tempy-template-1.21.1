@@ -110,7 +110,7 @@ public class RaceDetailScreen extends Screen {
                     // Example: Increase mining speed by 50% (e.g., multiply by 1.5)
                     double newMiningSpeed = currentMiningSpeed * 3.5; // Increase by 50%
 
-                    // Apply the new mining speed to the player
+                    // Apply the new mining speed to the playerd
                     player.getAttributeInstance(EntityAttributes.PLAYER_BLOCK_BREAK_SPEED).setBaseValue(newMiningSpeed);
 
                     // Optional: Print out the new mining speed for debugging
