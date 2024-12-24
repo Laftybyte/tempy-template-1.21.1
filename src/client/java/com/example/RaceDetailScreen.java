@@ -98,7 +98,7 @@ public class RaceDetailScreen extends Screen {
 
                 // Log the selection to the console
                 System.out.println("Player selected: " + raceName + " | Health: " + healthString);
-//
+//fs
                 // Set the player's health (assuming health is in the correct format)
                 this.client.player.setHealth(healthValue / 2.0f); // Dividing by 2 to match Minecraft's half-heart system
 
