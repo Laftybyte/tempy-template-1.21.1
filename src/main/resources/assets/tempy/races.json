@@ -240,8 +240,8 @@
                 "text": "Height: 1 blocks"
             },
             "health": {
-                "val": "16",
-                "text": "Health: 16"
+                "val": "3",
+                "text": "Health: 3"
             }
         },
         "racial_traits": [
