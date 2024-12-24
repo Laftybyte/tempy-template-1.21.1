@@ -53,6 +53,7 @@ public class RaceDetailScreen extends Screen {
         }).dimensions(10, height - 30, 100, 20).build());
 
         // Add a "Confirm" button at the bottom right
+        // Add a "Confirm" button at the bottom right
         this.addDrawableChild(ButtonWidget.builder(Text.of("Confirm"), btn -> {
             if (this.client != null) {
                 // Get the selected race's data
@@ -84,10 +85,7 @@ public class RaceDetailScreen extends Screen {
                     }
 
                     // Set the attack damage modifier
-                    // Use the correct operation (MULTIPLY_BASE or ADDITION)
-                    //player.getAttributeInstance(EntityAttributes.GENERIC_ATTACK_DAMAGE).addPersistentModifier(
-                     //       new EntityAttributeModifier("Race Attack Damage Modifier", damageMultiplier - 1.0, EntityAttributeModifier.Operation.MULTIPLY_BASE)
-                    //);
+
                 }
 
                 // Send a message to the in-game chat
@@ -98,14 +96,58 @@ public class RaceDetailScreen extends Screen {
 
                 // Log the selection to the console
                 System.out.println("Player selected: " + raceName + " | Health: " + healthString);
-//fs
+
                 // Set the player's health (assuming health is in the correct format)
                 this.client.player.setHealth(healthValue / 2.0f); // Dividing by 2 to match Minecraft's half-heart system
 
+
+
+                // <<Player mining speed snazzles>>
+                if (player != null) {
+                    // Get the current mining speed
+                    double currentMiningSpeed = player.getAttributeValue(EntityAttributes.PLAYER_BLOCK_BREAK_SPEED);
+
+                    // Example: Increase mining speed by 50% (e.g., multiply by 1.5)
+                    double newMiningSpeed = currentMiningSpeed * 3.5; // Increase by 50%
+
+                    // Apply the new mining speed to the player
+                    player.getAttributeInstance(EntityAttributes.PLAYER_BLOCK_BREAK_SPEED).setBaseValue(newMiningSpeed);
+
+                    // Optional: Print out the new mining speed for debugging
+                    System.out.println("New mining speed: " + newMiningSpeed);
+                }
+
+
+
+                // You can modify the player's attack damage attribute here
+                // Example: Increase attack damage by a multiplier (e.g., 1.5x)
+                double currentAttackDamage = player.getAttributeValue(EntityAttributes.GENERIC_ATTACK_DAMAGE); // Get current attack damage
+                double newAttackDamage = currentAttackDamage * 1.5; // Increase by 50% (for example)
+                System.out.println("Cur attack damage: " + currentAttackDamage);
+                // Now apply the new attack damage value
+                player.getAttributeInstance(EntityAttributes.GENERIC_ATTACK_DAMAGE).setBaseValue(newAttackDamage);
+
+                // Optional: You can also print out the updated value to the console for debugging
+                System.out.println("New attack damage: " + newAttackDamage);
+
+
+
+
+
+
                 // Close the selection screen
                 this.close();
+
+                // Display the player's attack damage after modification
+                if (player != null) {
+                    double attackDamage = player.getAttributeValue(EntityAttributes.GENERIC_ATTACK_DAMAGE);
+                    System.out.println("Player's new attack damage: " + attackDamage);  // Log it to the console
+                }
             }
         }).dimensions(width - 110, height - 30, 100, 20).build());
+
+
+
     }
     @Override
     public void render(DrawContext contents, int mouseX, int mouseY, float delta) {
